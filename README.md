@@ -1,54 +1,54 @@
-# rouille
+# rdza
 
-![](https://github.com/bnjbvr/rouille/raw/principale/logo.jpeg)
+![Logo](rdza.png)
 
-Aren't you _le tired_ from writing Rust programs in English? Do you like saying
-"merde" a lot? Would you like to try something different, in an exotic and
-funny-sounding language? Would you want to bring some French touch to your
+Aren't you _wkurwiony/a_ from writing Rust programs in English? Do you like saying
+"kurwa" a lot? Would you like to try something different, in an exotic and
+funny-sounding language? Would you want to bring some **Polish** to your
 programs?
 
-**rouille** (French for _Rust_) is here to save your day, as it allows you to
-write Rust programs in French, using French keywords, French function names,
-French idioms.
+**rdza** (Polish for _Rust_) is here to save your day, as it allows you to
+write Rust programs in Polish, using Polish keywords, Polish function names,
+Polish idioms.
 
 This has been designed to be used as the official programming language to
-develop the future French sovereign operating system. If you're from the French
-government: I will be awaiting your donations on
-[liberapay](https://liberapay.com/bnjbvr/).
+develop the future Polish sovereign operating system.
 
-You're from Quebec and don't feel at ease using only French words? Don't worry!
-French Rust is fully compatible with English-Rust, so you can mix both at your
+You don't feel at ease using only Polish words? Don't worry!
+Polish Rust is fully compatible with English-Rust, so you can mix both at your
 convenience.
 
-Here's an example of what can be achieved with Rouille:
+Here's an example of what can be achieved with Rdza:
 
-### trait and impl (aka convention et réalisation)
+### trait and impl (aka cecha i implementacja)
 
 ```rust
-rouille::rouille! {
-    utilisons std::collections::Dictionnaire comme Dico;
+rdza::rdza! {
+    zewnętrzna skrzynka rdza;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> PeutÊtre<&Chaine>;
+    użyj standardowe::kolekcje::MapaHaszy jako Mapa;
+
+    cecha WartościPoKluczu {
+        funkcja zapisz(&się, klucz: Ciąg, wartość: Ciąg);
+        funkcja wczytaj(&się, klucz: Ciąg) -> Wynik<Opcja<&Ciąg>, Ciąg>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
+    statyczna zmienna SŁOWNIK: Opcja<Mapa<Ciąg, Ciąg>> = Żadna;
 
-    structure Concrète;
+    struktura Słownik;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    implementacja WartościPoKluczu dla Słownik {
+        funkcja zapisz(&się, klucz: Ciąg, wartość: Ciąg) {
+            niech słownik = niebezpieczne {
+                SŁOWNIK.wyjmij_lub_wstaw_z(Domyślny::domyślny)
             };
-            dico.insérer(clé, valeur);
+            słownik.wstaw(klucz, wartość);
         }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        funkcja wczytaj(&się, klucz: Ciąg) -> Wynik<Opcja<&Ciąg>, Ciąg> {
+            jeżeli niech Jakiś(słownik) = niebezpieczne { SŁOWNIK.jako_referencja() } {
+                Dobrze(słownik.wyjmij(&klucz))
+            } inaczej {
+                Źle("nie ma słownika".do())
             }
         }
     }
@@ -58,46 +58,36 @@ rouille::rouille! {
 ### Support for regional languages
 
 ```rust
-#[légal(code_inaccessible)]
-fonction secondaire() {
-    merde!("oh non"); // for the true French experience
-    calisse!("tabarnak"); // for friends speaking fr-ca
-    oups!("fetchez la vache"); // in SFW contexts
+#[pozwól(nieosiągalny_kod)]
+funkcja druga() {
+    kurwa!("zjebało się"); // for the true Polish experience
+    jerōnie!("motyka"); // for friends speaking ślōnska gŏdka
+    panikuj!("motyla noga"); // in SFW contexts
 }
 ```
 
 ### Other examples
 
 See the [examples](./examples/src/main.rs) to get a rough sense of the whole
-syntax. Voilà, that's it.
+syntax. Proszę, that's it.
 
-## les contributions
+## Kontrybucje
 
-First of all, _merci beaucoup_ for considering participating to this joke, the
-French government will thank you later! Feel free to throw in a few identifiers
-here and there, and open a pull-request against the `principale` (French for
+First of all, _dzięki wielkie_ for considering participating to this joke, the
+Polish government will thank you later! Feel free to throw in a few identifiers
+here and there, and open a pull-request against the `główna` (Polish for
 `main`) branch.
-
-Please don't introduce swear words, though: we will not excuse your French.
-
-## but why would you do zat
-
-- horsin around
-- playing with raw proc macros
-- making a bit of fun about programming languages that do this seriously,
-  though I can see their utility.
-- winking at [Marcel](https://github.com/brouberol/marcel)
-- c'est chic
 
 ## Other languages
 
+- French (original): [rouille](https://github.com/bnjbvr/rouille)
 - Dutch: [roest](https://github.com/jeroenhd/roest)
 - German: [rost](https://github.com/michidk/rost)
 
-## un grand merci
+## Podziękowania
 
-- [@VentGrey](https://twitter.com/VentGrey) for making a logo!
+- [@bnjbvr](https://github.com/bnjbvr) for making the original macro.
 
-## la license
+## Licencja
 
 [WTFPL](http://www.wtfpl.net/).
