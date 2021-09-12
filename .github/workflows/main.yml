@@ -2,9 +2,9 @@ name: Rust
 
 on:
   push:
-    branches: [ principale ]
+    branches: [ główna ]
   pull_request:
-    branches: [ principale ]
+    branches: [ główna ]
 
 jobs:
   ci:
@@ -26,7 +26,7 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
 
-      - name: Lancer les exemples
+      - name: Uruchom przykłady
         uses: actions-rs/cargo@v1
         with:
           command: run
