@@ -5,9 +5,9 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
 
     let new_str = match ident_str.as_str() {
         "Źle" => "Err",
-        "Dobrze" => "Ok",
+        "Dobrze" | "Prawilnie" => "Ok",
         "Ciąg" => "String",
-        "MapaHaszy" => "HashMap",
+        "MapaHaszy" | "HaszMapa" => "HashMap",
         "Wektor" => "Vec",
         "Domyślny" | "Domyślna" | "Domyślne" => "Default",
         "Błąd" => "Error",
@@ -22,7 +22,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "przełam" => "break",
         "współbieżny" | "współbieżna" | "współbieżne" => "async",
         "zaczekaj" => "await",
-        "zapętl" => "loop",
+        "zapętl" | "w_kółko" => "loop",
         "przenieś" => "move",
         "skrzynka" | "skrzynki" | "skrzynkę" | "skrzynia" | "skrzyni" | "skrzynię" => "crate",
         "nieosiągalny_kod" => "unreachable_code",
@@ -62,13 +62,13 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "niech" => "let",
         "statyczny" | "statyczna" | "statyczne" => "static",
         "struktura" => "struct",
-        "spodziewaj_się" => "expect",
+        "spodziewaj_się" | "oczekuj" => "expect",
         "dopóki" => "while",
         "użyj" => "use",
         "do" => "into",
         "rób" => "do",
         "prawda" => "true",
-        "enumeracja" => "enum",
+        "enumeracja" | "wyliczanie" | "wyliczanka" | "wyliczaj" => "enum",
 
         _ => &ident_str,
     };
