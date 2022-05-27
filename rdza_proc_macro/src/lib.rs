@@ -7,7 +7,7 @@ fn replace_ident(ident: Ident) -> Option<TokenTree> {
         "Źle" => "Err",
         "Dobrze" => "Ok",
         "Ciąg" => "String",
-        "MapaHaszy" => "HashMap",
+        "MapaHaszy" | "MapaSkrótów" => "HashMap",
         "Wektor" => "Vec",
         "Domyślny" | "Domyślna" | "Domyślne" => "Default",
         "Błąd" => "Error",
