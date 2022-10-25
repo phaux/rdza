@@ -40,11 +40,11 @@ rdza::rdza! {
         }
     }
 
-    współbieżna funkcja async_przykład() {
+    współbieżna funkcja współbieżna_przykład() {
     }
 
-    publiczna współbieżna funkcja async_przykład2() {
-        async_przykład().zaczekaj;
+    publiczna współbieżna funkcja współbieżna_przykład2() {
+         współbieżna_przykład().zaczekaj;
     }
 
     funkcja główna() {
